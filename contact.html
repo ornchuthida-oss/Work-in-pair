@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Morrow Goods for questions and support.">
+    <title>Morrow Goods | Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { ink: '#20211f', paper: '#f7f5f0', coral: '#e7624c', mist: '#e8e4dc', sage: '#aab7a0' }, fontFamily: { display: ['Sora', 'sans-serif'], sans: ['DM Sans', 'sans-serif'] }, boxShadow: { soft: '0 18px 50px rgba(32,33,31,.10)' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: #f7f5f0;
+            color: #20211f
+        }
+
+        .reveal {
+            animation: reveal .7s ease both
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(18px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .info-card {
+            transition: transform .3s ease, box-shadow .3s ease
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 50px rgba(32, 33, 31, .10)
+        }
+
+        .social-link {
+            transition: transform .25s ease, background-color .25s ease
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: #e8e4dc
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            html {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+    <div class="bg-ink px-4 py-2.5 text-center text-xs font-semibold tracking-[.15em] text-paper">Complimentary shipping
+        on orders over $75</div>
+    <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper/95 backdrop-blur-md">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
+            <a href="index.html" class="font-display text-xl font-bold tracking-[-.06em]">morrow<span
+                    class="text-coral">.</span></a>
+            <div class="hidden items-center gap-8 text-sm font-semibold md:flex"><a class="hover:text-coral"
+                    href="index.html">Home</a><a class="hover:text-coral" href="about.html">About</a><a
+                    class="hover:text-coral" href="services.html">Services</a><a class="hover:text-coral"
+                    href="index.html#products">Menu</a><a class="text-coral" href="contact.html">Contact</a></div>
+            <div class="flex items-center gap-2"><button id="cartButton"
+                    class="relative rounded-full p-2.5 hover:bg-mist" aria-label="Open shopping cart"><svg
+                        class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M3 4h2l2.5 12h10l3-9H6.3" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="9" cy="20" r="1" />
+                        <circle cx="17" cy="20" r="1" />
+                    </svg></button><button id="menuButton" class="rounded-full p-2.5 hover:bg-mist md:hidden"
+                    aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg class="h-5 w-5"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+                    </svg></button></div>
+        </nav>
+        <div id="mobileMenu" class="hidden border-t border-ink/10 px-5 pb-5 md:hidden">
+            <div class="flex flex-col gap-1 pt-3 text-sm font-semibold"><a class="rounded-lg px-3 py-3 hover:bg-mist"
+                    href="index.html">Home</a><a class="rounded-lg px-3 py-3 hover:bg-mist"
+                    href="about.html">About</a><a class="rounded-lg px-3 py-3 hover:bg-mist"
+                    href="services.html">Services</a><a class="rounded-lg px-3 py-3 hover:bg-mist"
+                    href="index.html#products">Menu</a><a class="rounded-lg bg-mist px-3 py-3 text-coral"
+                    href="contact.html">Contact</a></div>
+        </div>
+    </header>
+    <main>
+        <section class="mx-auto max-w-7xl px-5 py-16 sm:py-20 lg:px-8 lg:py-28">
+            <div class="reveal mx-auto max-w-3xl text-center">
+                <p class="mb-5 text-xs font-bold uppercase tracking-[.2em] text-coral">We'd love to hear from you</p>
+                <h1
+                    class="font-display text-5xl font-semibold leading-[1.05] tracking-[-.07em] sm:text-6xl lg:text-7xl">
+                    Contact <span class="text-coral">Us.</span></h1>
+                <p class="mx-auto mt-7 max-w-2xl text-base leading-7 text-ink/65 sm:text-lg">Have a question about a
+                    product, an order, or our services? Send us a message and our team will be happy to help.</p>
+            </div>
+        </section>
+        <section class="mx-auto max-w-7xl px-5 pb-20 lg:px-8 lg:pb-28">
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <article class="info-card rounded-3xl border border-ink/10 bg-white p-6 shadow-soft">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mist text-coral text-2xl">📍
+                    </div>
+                    <h2 class="mt-5 font-display text-lg font-semibold">Address</h2>
+                    <p class="mt-2 text-sm leading-6 text-ink/60">Phnom Penh, Cambodia</p>
+                </article>
+                <article class="info-card rounded-3xl border border-ink/10 bg-white p-6 shadow-soft">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mist text-coral text-2xl">📞
+                    </div>
+                    <h2 class="mt-5 font-display text-lg font-semibold">Phone</h2>
+                    <p class="mt-2 text-sm leading-6 text-ink/60">+855 12 345 678</p>
+                </article>
+                <article class="info-card rounded-3xl border border-ink/10 bg-white p-6 shadow-soft">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mist text-coral text-2xl">✉
+                    </div>
+                    <h2 class="mt-5 font-display text-lg font-semibold">Email</h2>
+                    <p class="mt-2 break-all text-sm leading-6 text-ink/60">hello@morrowgoods.com</p>
+                </article>
+                <article class="info-card rounded-3xl border border-ink/10 bg-white p-6 shadow-soft">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mist text-coral text-2xl">🕐
+                    </div>
+                    <h2 class="mt-5 font-display text-lg font-semibold">Opening Hours</h2>
+                    <p class="mt-2 text-sm leading-6 text-ink/60">Mon – Sat<br>9:00 AM – 6:00 PM</p>
+                </article>
+            </div>
+        </section>
+        <section class="bg-mist/60 py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-5 lg:px-8">
+                <div class="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-start">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Send a message</p>
+                        <h2 class="mt-4 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">Let's talk.
+                        </h2>
+                        <p class="mt-5 max-w-md text-sm leading-7 text-ink/60">Fill out the form and tell us how we can
+                            help. Please provide accurate information so we can respond to you.</p>
+                        <div class="mt-8 rounded-3xl bg-paper p-6">
+                            <p class="text-sm font-semibold">Need quick help?</p>
+                            <p class="mt-2 text-sm leading-6 text-ink/60">For questions about orders, products, returns
+                                or delivery, our support team is ready to assist.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-[2rem] bg-paper p-6 shadow-soft sm:p-8">
+                        <div id="successMessage"
+                            class="mb-6 hidden rounded-2xl border border-green-200 bg-green-50 px-5 py-4 text-sm font-medium text-green-800"
+                            role="alert">Your message was sent successfully. Thank you for contacting us!</div>
+                        <form id="contactForm" novalidate>
+                            <div class="grid gap-5 sm:grid-cols-2">
+                                <div><label for="fullName" class="mb-2 block text-sm font-semibold">Full
+                                        Name</label><input id="fullName" type="text" placeholder="Your full name"
+                                        class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-sm outline-none focus:border-coral focus:ring-2 focus:ring-coral/10">
+                                    <p id="nameError" class="mt-2 hidden text-xs font-medium text-red-600"></p>
+                                </div>
+                                <div><label for="email" class="mb-2 block text-sm font-semibold">Email</label><input
+                                        id="email" type="email" placeholder="you@example.com"
+                                        class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-sm outline-none focus:border-coral focus:ring-2 focus:ring-coral/10">
+                                    <p id="emailError" class="mt-2 hidden text-xs font-medium text-red-600"></p>
+                                </div>
+                            </div>
+                            <div class="mt-5 grid gap-5 sm:grid-cols-2">
+                                <div><label for="phone" class="mb-2 block text-sm font-semibold">Phone</label><input
+                                        id="phone" type="tel" placeholder="+855 12 345 678"
+                                        class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-sm outline-none focus:border-coral focus:ring-2 focus:ring-coral/10">
+                                    <p id="phoneError" class="mt-2 hidden text-xs font-medium text-red-600"></p>
+                                </div>
+                                <div><label for="subject" class="mb-2 block text-sm font-semibold">Subject</label><input
+                                        id="subject" type="text" placeholder="How can we help?"
+                                        class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-sm outline-none focus:border-coral focus:ring-2 focus:ring-coral/10">
+                                    <p id="subjectError" class="mt-2 hidden text-xs font-medium text-red-600"></p>
+                                </div>
+                            </div>
+                            <div class="mt-5"><label for="message"
+                                    class="mb-2 block text-sm font-semibold">Message</label><textarea id="message"
+                                    rows="6" placeholder="Write your message here..."
+                                    class="w-full resize-none rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-sm outline-none focus:border-coral focus:ring-2 focus:ring-coral/10"></textarea>
+                                <p id="messageError" class="mt-2 hidden text-xs font-medium text-red-600"></p>
+                            </div>
+                            <button type="submit"
+                                class="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-coral px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 sm:w-auto">Send
+                                Message <span>→</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white py-20 sm:py-24">
+            <div class="mx-auto max-w-4xl px-5 lg:px-8">
+                <div class="text-center">
+                    <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">FAQ</p>
+                    <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">Common questions.
+                    </h2>
+                </div>
+                <div id="faqList" class="mt-10 space-y-3">
+                    <div class="faq-item rounded-2xl border border-ink/10"><button
+                            class="faq-question flex w-full items-center justify-between gap-6 px-6 py-5 text-left font-semibold"
+                            aria-expanded="false"><span>How can I check my order?</span><span
+                                class="faq-icon text-2xl font-normal text-coral">+</span></button>
+                        <div class="faq-answer hidden px-6 pb-6 text-sm leading-6 text-ink/60">Contact our support team
+                            with your order details and we will help you check your order status.</div>
+                    </div>
+                    <div class="faq-item rounded-2xl border border-ink/10"><button
+                            class="faq-question flex w-full items-center justify-between gap-6 px-6 py-5 text-left font-semibold"
+                            aria-expanded="false"><span>Can I return a product?</span><span
+                                class="faq-icon text-2xl font-normal text-coral">+</span></button>
+                        <div class="faq-answer hidden px-6 pb-6 text-sm leading-6 text-ink/60">Yes. Eligible products
+                            can be returned according to our return policy. Please contact us for assistance.</div>
+                    </div>
+                    <div class="faq-item rounded-2xl border border-ink/10"><button
+                            class="faq-question flex w-full items-center justify-between gap-6 px-6 py-5 text-left font-semibold"
+                            aria-expanded="false"><span>How long does delivery take?</span><span
+                                class="faq-icon text-2xl font-normal text-coral">+</span></button>
+                        <div class="faq-answer hidden px-6 pb-6 text-sm leading-6 text-ink/60">Delivery time depends on
+                            your location and order. Our team works to deliver orders as quickly as possible.</div>
+                    </div>
+                    <div class="faq-item rounded-2xl border border-ink/10"><button
+                            class="faq-question flex w-full items-center justify-between gap-6 px-6 py-5 text-left font-semibold"
+                            aria-expanded="false"><span>What are your opening hours?</span><span
+                                class="faq-icon text-2xl font-normal text-coral">+</span></button>
+                        <div class="faq-answer hidden px-6 pb-6 text-sm leading-6 text-ink/60">We are available Monday
+                            to Saturday from 9:00 AM to 6:00 PM.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-24">
+            <div class="mb-8">
+                <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Find us</p>
+                <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">Our location.</h2>
+            </div>
+            <div class="flex min-h-[350px] items-center justify-center rounded-[2rem] border border-ink/10 bg-mist">
+                <div class="text-center">
+                    <div
+                        class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-paper text-3xl shadow-soft">
+                        📍</div>
+                    <h3 class="mt-5 font-display text-xl font-semibold">Map Placeholder</h3>
+                    <p class="mx-auto mt-2 max-w-sm text-sm leading-6 text-ink/60">Phnom Penh, Cambodia. Replace this
+                        section with Google Maps later.</p>
+                </div>
+            </div>
+        </section>
+        <section class="bg-mist/60 py-20">
+            <div class="mx-auto max-w-4xl px-5 text-center lg:px-8">
+                <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Stay connected</p>
+                <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">Follow us.</h2>
+                <div class="mt-8 flex flex-wrap justify-center gap-3"><a href="#"
+                        class="social-link inline-flex items-center gap-3 rounded-full bg-paper px-5 py-3 text-sm font-semibold">ⓕ
+                        Facebook</a><a href="#"
+                        class="social-link inline-flex items-center gap-3 rounded-full bg-paper px-5 py-3 text-sm font-semibold">◎
+                        Instagram</a><a href="#"
+                        class="social-link inline-flex items-center gap-3 rounded-full bg-paper px-5 py-3 text-sm font-semibold">✈
+                        Telegram</a><a href="#"
+                        class="social-link inline-flex items-center gap-3 rounded-full bg-paper px-5 py-3 text-sm font-semibold">♪
+                        TikTok</a></div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-ink text-paper">
+        <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+            <div class="sm:col-span-2"><a href="index.html"
+                    class="font-display text-2xl font-bold tracking-[-.06em]">morrow<span
+                        class="text-coral">.</span></a>
+                <p class="mt-4 max-w-sm text-sm leading-6 text-paper/60">Thoughtful products and simple services for
+                    everyday living.</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold">Explore</h3>
+                <div class="mt-4 flex flex-col gap-3 text-sm text-paper/60"><a class="hover:text-coral"
+                        href="index.html">Home</a><a class="hover:text-coral" href="about.html">About</a><a
+                        class="hover:text-coral" href="services.html">Services</a><a class="hover:text-coral"
+                        href="index.html#products">Menu</a></div>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold">Contact</h3>
+                <div class="mt-4 flex flex-col gap-3 text-sm text-paper/60"><a class="text-coral"
+                        href="contact.html">Contact us</a><span>Mon–Sat, 9am–6pm</span><span>Made with care.</span>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-paper/10">
+            <div
+                class="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+                <p>© 2026 Morrow Goods. All rights reserved.</p>
+                <p>Everyday, considered.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuButton = document.getElementById('menuButton'), mobileMenu = document.getElementById('mobileMenu'); menuButton.addEventListener('click', () => { const open = !mobileMenu.classList.contains('hidden'); mobileMenu.classList.toggle('hidden'); menuButton.setAttribute('aria-expanded', String(!open)); }); mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+        document.getElementById('cartButton').addEventListener('click', () => alert('Your cart is currently empty.'));
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => { const item = q.closest('.faq-item'), answer = item.querySelector('.faq-answer'), icon = item.querySelector('.faq-icon'), open = !answer.classList.contains('hidden'); document.querySelectorAll('.faq-item').forEach(i => { i.querySelector('.faq-answer').classList.add('hidden'); i.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); i.querySelector('.faq-icon').textContent = '+' }); if (!open) { answer.classList.remove('hidden'); q.setAttribute('aria-expanded', 'true'); icon.textContent = '×' } }));
+        const form = document.getElementById('contactForm'), success = document.getElementById('successMessage'); const fields = { fullName: 'nameError', email: 'emailError', phone: 'phoneError', subject: 'subjectError', message: 'messageError' }; function error(id, msg) { const e = document.getElementById(fields[id]), f = document.getElementById(id); e.textContent = msg; e.classList.remove('hidden'); f.classList.add('border-red-500') } function clear(id) { const e = document.getElementById(fields[id]), f = document.getElementById(id); e.classList.add('hidden'); e.textContent = ''; f.classList.remove('border-red-500') }
+        form.addEventListener('submit', e => { e.preventDefault(); Object.keys(fields).forEach(clear); let ok = true; const name = document.getElementById('fullName').value.trim(), email = document.getElementById('email').value.trim(), phone = document.getElementById('phone').value.trim(), subject = document.getElementById('subject').value.trim(), message = document.getElementById('message').value.trim(); if (!name) { error('fullName', 'Please enter your name.'); ok = false } if (!email) { error('email', 'Please enter your email.'); ok = false } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { error('email', 'Please enter a valid email address.'); ok = false } if (!phone) { error('phone', 'Please enter your phone number.'); ok = false } else if (!/^[0-9+\-\s()]{8,20}$/.test(phone)) { error('phone', 'Please enter a valid phone number.'); ok = false } if (!subject) { error('subject', 'Please enter a subject.'); ok = false } if (!message) { error('message', 'Please enter your message.'); ok = false } if (ok) { form.reset(); success.classList.remove('hidden'); success.scrollIntoView({ behavior: 'smooth', block: 'center' }) } else { success.classList.add('hidden') } });
+        const observer = new IntersectionObserver(entries => entries.forEach(x => { if (x.isIntersecting) { x.target.classList.add('reveal'); observer.unobserve(x.target) } }), { threshold: .08 }); document.querySelectorAll('section').forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
