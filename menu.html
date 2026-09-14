@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop the Morrow Goods collection of considered everyday essentials.">
+  <title>Menu | Morrow Goods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: '#20211f', paper: '#f7f5f0', coral: '#e7624c', mist: '#e8e4dc', sage: '#aab7a0' },
+          fontFamily: { display: ['Sora', 'sans-serif'], sans: ['DM Sans', 'sans-serif'] },
+          boxShadow: { soft: '0 18px 50px rgba(32, 33, 31, .10)' }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f7f5f0; color: #20211f; }
+    .product-card:hover .product-image { transform: scale(1.04); }
+    .product-image { transition: transform .45s ease; }
+    .drawer { transition: transform .3s ease; }
+    .drawer-backdrop { transition: opacity .3s ease; }
+    @media (prefers-reduced-motion: reduce) { *, html { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <div class="bg-ink px-4 py-2.5 text-center text-xs font-semibold tracking-[.15em] text-paper">Complimentary shipping on orders over $75</div>
+
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper/95 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
+      <a href="index.html" class="font-display text-xl font-bold tracking-[-.06em]" aria-label="Morrow Goods home">morrow<span class="text-coral">.</span></a>
+      <div class="hidden items-center gap-8 text-sm font-semibold md:flex">
+        <a class="transition-colors hover:text-coral" href="index.html">Home</a>
+        <a class="transition-colors hover:text-coral" href="index.html#about">About</a>
+        <a class="transition-colors hover:text-coral" href="index.html#services">Services</a>
+        <a class="text-coral" href="menu.html" aria-current="page">Menu</a>
+        <a class="transition-colors hover:text-coral" href="index.html#contact">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="cartButton" class="relative rounded-full p-2.5 transition-colors hover:bg-mist" aria-label="Open shopping cart" aria-expanded="false">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 4h2l2.5 12h10l3-9H6.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+          <span id="cartCount" class="absolute -right-0.5 -top-0.5 hidden h-4 min-w-4 items-center justify-center rounded-full bg-coral px-1 text-[10px] font-bold text-white">0</span>
+        </button>
+        <button id="menuButton" class="rounded-full p-2.5 transition-colors hover:bg-mist md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-ink/10 px-5 pb-5 md:hidden">
+      <div class="flex flex-col gap-1 pt-3 text-sm font-semibold">
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html">Home</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html#about">About</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html#services">Services</a>
+        <a class="rounded-lg bg-mist px-3 py-3 text-coral" href="menu.html">Menu</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="mx-auto max-w-7xl px-5 pb-12 pt-16 lg:px-8 lg:pb-16 lg:pt-24">
+      <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">The Morrow collection</p>
+      <div class="mt-4 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div><h1 class="font-display text-5xl font-semibold tracking-[-.07em] sm:text-6xl">Our Products</h1><p class="mt-5 max-w-xl text-base leading-7 text-ink/65">Useful, beautiful things for every part of your day. Explore our edit of considered essentials from makers we trust.</p></div>
+        <p id="resultCount" class="shrink-0 text-sm font-semibold text-ink/50">12 products</p>
+      </div>
+    </section>
+
+    <section class="border-y border-ink/10 bg-white/45">
+      <div class="mx-auto max-w-7xl px-5 py-6 lg:px-8">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <label class="relative block max-w-md flex-1" for="searchInput"><span class="sr-only">Search products by name</span><svg class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ink/45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><input id="searchInput" type="search" placeholder="Search products by name..." class="w-full rounded-full border border-ink/15 bg-paper py-3.5 pl-11 pr-5 text-sm outline-none transition-colors placeholder:text-ink/40 focus:border-coral"></label>
+          <div id="categoryFilters" class="flex gap-2 overflow-x-auto pb-1" aria-label="Product categories">
+            <button class="category-button shrink-0 rounded-full bg-ink px-5 py-3 text-xs font-bold text-white" data-category="All">All</button>
+            <button class="category-button shrink-0 rounded-full border border-ink/15 px-5 py-3 text-xs font-bold transition-colors hover:border-coral hover:text-coral" data-category="Electronics">Electronics</button>
+            <button class="category-button shrink-0 rounded-full border border-ink/15 px-5 py-3 text-xs font-bold transition-colors hover:border-coral hover:text-coral" data-category="Fashion">Fashion</button>
+            <button class="category-button shrink-0 rounded-full border border-ink/15 px-5 py-3 text-xs font-bold transition-colors hover:border-coral hover:text-coral" data-category="Beauty">Beauty</button>
+            <button class="category-button shrink-0 rounded-full border border-ink/15 px-5 py-3 text-xs font-bold transition-colors hover:border-coral hover:text-coral" data-category="Food">Food</button>
+            <button class="category-button shrink-0 rounded-full border border-ink/15 px-5 py-3 text-xs font-bold transition-colors hover:border-coral hover:text-coral" data-category="Accessories">Accessories</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
+      <div id="productGrid" class="grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+      <div id="emptyState" class="hidden py-24 text-center"><p class="font-display text-2xl font-semibold">No products found</p><p class="mt-3 text-sm text-ink/55">Try another search or category.</p><button id="clearFilters" class="mt-6 rounded-full bg-coral px-5 py-3 text-sm font-bold text-white">Clear filters</button></div>
+    </section>
+  </main>
+
+  <footer id="contact" class="bg-ink px-5 py-12 text-paper lg:px-8"><div class="mx-auto max-w-7xl"><div class="grid gap-10 border-b border-white/15 pb-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]"><div><a href="index.html" class="font-display text-xl font-bold tracking-[-.06em]">morrow<span class="text-coral">.</span></a><p class="mt-4 max-w-xs text-sm leading-6 text-paper/55">A considered collection of things for everyday living.</p></div><div><h3 class="text-xs font-bold uppercase tracking-[.15em] text-paper/45">Explore</h3><div class="mt-4 flex flex-col gap-3 text-sm text-paper/75"><a class="hover:text-white" href="index.html#about">About</a><a class="hover:text-white" href="menu.html">Menu</a><a class="hover:text-white" href="index.html#services">Services</a></div></div><div><h3 class="text-xs font-bold uppercase tracking-[.15em] text-paper/45">Help</h3><div class="mt-4 flex flex-col gap-3 text-sm text-paper/75"><a class="hover:text-white" href="#contact">Contact</a><a class="hover:text-white" href="#contact">Shipping</a><a class="hover:text-white" href="#contact">Returns</a></div></div><div><h3 class="text-xs font-bold uppercase tracking-[.15em] text-paper/45">Follow along</h3><div class="mt-4 flex gap-4 text-sm text-paper/75"><a class="hover:text-white" href="#contact">Instagram</a><a class="hover:text-white" href="#contact">Pinterest</a></div></div></div><div class="flex flex-col justify-between gap-3 pt-6 text-xs text-paper/45 sm:flex-row"><p>&copy; 2024 Morrow Goods. All rights reserved.</p><p>Made with care, wherever you are.</p></div></div></footer>
+
+  <div id="drawerBackdrop" class="drawer-backdrop pointer-events-none fixed inset-0 z-40 bg-ink/40 opacity-0" aria-hidden="true"></div>
+  <aside id="cartDrawer" class="drawer fixed right-0 top-0 z-50 flex h-full w-full max-w-md translate-x-full flex-col bg-paper shadow-2xl" aria-label="Shopping cart" aria-hidden="true">
+    <div class="flex items-center justify-between border-b border-ink/10 px-6 py-5"><div><p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Your bag</p><h2 class="mt-1 font-display text-xl font-semibold">Shopping cart</h2></div><button id="closeCart" class="rounded-full p-2 transition-colors hover:bg-mist" aria-label="Close shopping cart"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke-linecap="round"/></svg></button></div>
+    <div id="cartItems" class="flex-1 overflow-y-auto px-6 py-5"></div>
+    <div class="border-t border-ink/10 px-6 py-6"><div class="flex justify-between text-sm text-ink/60"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div><div class="mt-3 flex justify-between font-display text-lg font-semibold"><span>Total</span><span id="cartTotal">$0.00</span></div><p class="mt-2 text-xs text-ink/45">Shipping calculated at checkout.</p><button id="checkoutButton" class="mt-5 w-full rounded-full bg-coral py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5">Continue to checkout</button></div>
+  </aside>
+  <div id="toast" class="pointer-events-none fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 translate-y-4 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white opacity-0 shadow-soft transition-all duration-300" role="status" aria-live="polite"></div>
+
+  <script>
+    const products = [
+      { id: 1, name: 'Arc Wireless Headphones', category: 'Electronics', price: 128, oldPrice: 160, rating: 4.8, reviews: 36, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85' },
+      { id: 2, name: 'Orbit Desk Lamp', category: 'Electronics', price: 74, oldPrice: 96, rating: 4.7, reviews: 28, image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=85' },
+      { id: 3, name: 'Loom Everyday Tote', category: 'Fashion', price: 58, oldPrice: 72, rating: 4.9, reviews: 45, image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=700&q=85' },
+      { id: 4, name: 'Form Overshirt', category: 'Fashion', price: 92, oldPrice: 120, rating: 4.6, reviews: 19, image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=85' },
+      { id: 5, name: 'Daily Ritual Set', category: 'Beauty', price: 52, oldPrice: 68, rating: 4.9, reviews: 32, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=85' },
+      { id: 6, name: 'Cedar Hand Wash', category: 'Beauty', price: 24, oldPrice: 30, rating: 4.8, reviews: 22, image: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=700&q=85' },
+      { id: 7, name: 'Sunday Coffee Beans', category: 'Food', price: 18, oldPrice: 22, rating: 4.9, reviews: 51, image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=700&q=85' },
+      { id: 8, name: 'Wildflower Honey', category: 'Food', price: 16, oldPrice: 20, rating: 4.7, reviews: 24, image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=700&q=85' },
+      { id: 9, name: 'Pebble Planter', category: 'Accessories', price: 42, oldPrice: 54, rating: 4.8, reviews: 27, image: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=700&q=85' },
+      { id: 10, name: 'Forma Key Tray', category: 'Accessories', price: 28, oldPrice: 36, rating: 4.6, reviews: 17, image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=85' },
+      { id: 11, name: 'Sola Sunglasses', category: 'Accessories', price: 64, oldPrice: 80, rating: 4.7, reviews: 31, image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=85' },
+      { id: 12, name: 'Mini Bluetooth Speaker', category: 'Electronics', price: 46, oldPrice: 60, rating: 4.5, reviews: 29, image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=85' }
+    ];
+
+    let activeCategory = 'All';
+    let cart = [];
+    let toastTimer;
+    const productGrid = document.querySelector('#productGrid');
+    const searchInput = document.querySelector('#searchInput');
+    const resultCount = document.querySelector('#resultCount');
+    const emptyState = document.querySelector('#emptyState');
+    const cartCount = document.querySelector('#cartCount');
+    const cartItems = document.querySelector('#cartItems');
+    const cartSubtotal = document.querySelector('#cartSubtotal');
+    const cartTotal = document.querySelector('#cartTotal');
+    const cartDrawer = document.querySelector('#cartDrawer');
+    const drawerBackdrop = document.querySelector('#drawerBackdrop');
+
+    function formatPrice(price) { return `$${price.toFixed(2)}`; }
+
+    function renderProducts() {
+      const query = searchInput.value.toLowerCase().trim();
+      const filteredProducts = products.filter((product) => {
+        const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
+        return matchesCategory && product.name.toLowerCase().includes(query);
+      });
+      resultCount.textContent = `${filteredProducts.length} product${filteredProducts.length === 1 ? '' : 's'}`;
+      productGrid.innerHTML = filteredProducts.map((product) => `
+        <article class="product-card group" data-product-id="${product.id}">
+          <div class="relative overflow-hidden rounded-2xl bg-mist"><img class="product-image aspect-[4/5] w-full object-cover" src="${product.image}" alt="${product.name}" loading="lazy"><span class="absolute left-3 top-3 rounded-full bg-coral px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</span></div>
+          <div class="mt-4 flex justify-between gap-3"><div><h2 class="font-display text-sm font-semibold">${product.name}</h2><p class="mt-1 text-sm text-ink/55">${product.category}</p><p class="mt-2 text-xs text-amber-600">${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5 - Math.round(product.rating))} <span class="text-ink/45">(${product.reviews})</span></p></div><div class="text-right"><p class="font-semibold">${formatPrice(product.price)}</p><p class="mt-1 text-xs text-ink/40 line-through">${formatPrice(product.oldPrice)}</p></div></div>
+          <div class="mt-4 grid grid-cols-[1fr_auto] gap-2"><button class="add-to-cart rounded-full bg-coral py-3 text-xs font-bold text-white transition-transform hover:-translate-y-0.5" data-id="${product.id}">Add to cart</button><button class="view-details rounded-full border border-ink/15 px-3 text-xs font-bold transition-colors hover:border-coral hover:text-coral" data-id="${product.id}">Details</button></div>
+        </article>`).join('');
+      emptyState.classList.toggle('hidden', filteredProducts.length !== 0);
+    }
+
+    function renderCart() {
+      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+      const subtotal = cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
+      cartCount.textContent = itemCount;
+      cartCount.classList.toggle('hidden', itemCount === 0);
+      cartCount.classList.toggle('flex', itemCount > 0);
+      cartSubtotal.textContent = formatPrice(subtotal);
+      cartTotal.textContent = formatPrice(subtotal);
+      cartItems.innerHTML = cart.length ? cart.map((item) => `
+        <div class="flex gap-4 border-b border-ink/10 py-4"><img class="h-20 w-16 rounded-lg object-cover" src="${item.product.image}" alt="${item.product.name}"><div class="min-w-0 flex-1"><div class="flex justify-between gap-2"><h3 class="truncate text-sm font-semibold">${item.product.name}</h3><button class="remove-item text-xs text-ink/45 underline underline-offset-4 hover:text-coral" data-id="${item.product.id}">Remove</button></div><p class="mt-1 text-xs text-ink/50">${formatPrice(item.product.price)}</p><div class="mt-3 flex items-center gap-3"><button class="quantity-button flex h-7 w-7 items-center justify-center rounded-full border border-ink/15 text-sm hover:border-coral" data-action="decrease" data-id="${item.product.id}" aria-label="Decrease quantity">−</button><span class="w-4 text-center text-sm font-semibold">${item.quantity}</span><button class="quantity-button flex h-7 w-7 items-center justify-center rounded-full border border-ink/15 text-sm hover:border-coral" data-action="increase" data-id="${item.product.id}" aria-label="Increase quantity">+</button></div></div></div>`).join('') : '<div class="flex h-full flex-col items-center justify-center text-center"><div class="flex h-14 w-14 items-center justify-center rounded-full bg-mist text-2xl">&#9825;</div><p class="mt-5 font-display font-semibold">Your bag is empty</p><p class="mt-2 text-sm text-ink/55">Add something lovely to get started.</p></div>';
+    }
+
+    function addToCart(id) {
+      const existingItem = cart.find((item) => item.product.id === id);
+      if (existingItem) existingItem.quantity += 1;
+      else cart.push({ product: products.find((product) => product.id === id), quantity: 1 });
+      renderCart();
+      showToast(`${products.find((product) => product.id === id).name} added to your cart`);
+    }
+
+    function updateQuantity(id, change) {
+      const item = cart.find((cartItem) => cartItem.product.id === id);
+      if (!item) return;
+      item.quantity += change;
+      if (item.quantity <= 0) cart = cart.filter((cartItem) => cartItem.product.id !== id);
+      renderCart();
+    }
+
+    function openCart() {
+      cartDrawer.classList.remove('translate-x-full');
+      cartDrawer.setAttribute('aria-hidden', 'false');
+      drawerBackdrop.classList.remove('pointer-events-none', 'opacity-0');
+      drawerBackdrop.classList.add('opacity-100');
+      document.querySelector('#cartButton').setAttribute('aria-expanded', 'true');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.add('translate-x-full');
+      cartDrawer.setAttribute('aria-hidden', 'true');
+      drawerBackdrop.classList.add('pointer-events-none', 'opacity-0');
+      drawerBackdrop.classList.remove('opacity-100');
+      document.querySelector('#cartButton').setAttribute('aria-expanded', 'false');
+    }
+
+    function showToast(message) {
+      const toast = document.querySelector('#toast');
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toast.classList.add('opacity-0', 'translate-y-4'); toast.classList.remove('opacity-100', 'translate-y-0'); }, 2400);
+    }
+
+    document.querySelector('#menuButton').addEventListener('click', () => {
+      const menu = document.querySelector('#mobileMenu');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      document.querySelector('#menuButton').setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.querySelector('#cartButton').addEventListener('click', openCart);
+    document.querySelector('#closeCart').addEventListener('click', closeCart);
+    drawerBackdrop.addEventListener('click', closeCart);
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeCart(); });
+    searchInput.addEventListener('input', renderProducts);
+    document.querySelector('#categoryFilters').addEventListener('click', (event) => {
+      const button = event.target.closest('.category-button');
+      if (!button) return;
+      activeCategory = button.dataset.category;
+      document.querySelectorAll('.category-button').forEach((categoryButton) => { categoryButton.classList.remove('bg-ink', 'text-white'); categoryButton.classList.add('border', 'border-ink/15'); });
+      button.classList.add('bg-ink', 'text-white');
+      button.classList.remove('border', 'border-ink/15');
+      renderProducts();
+    });
+    productGrid.addEventListener('click', (event) => {
+      const addButton = event.target.closest('.add-to-cart');
+      const detailsButton = event.target.closest('.view-details');
+      if (addButton) addToCart(Number(addButton.dataset.id));
+      if (detailsButton) { const product = products.find((item) => item.id === Number(detailsButton.dataset.id)); showToast(`${product.name}: ${product.category}, ${formatPrice(product.price)}`); }
+    });
+    cartItems.addEventListener('click', (event) => {
+      const quantityButton = event.target.closest('.quantity-button');
+      const removeButton = event.target.closest('.remove-item');
+      if (quantityButton) updateQuantity(Number(quantityButton.dataset.id), quantityButton.dataset.action === 'increase' ? 1 : -1);
+      if (removeButton) { cart = cart.filter((item) => item.product.id !== Number(removeButton.dataset.id)); renderCart(); }
+    });
+    document.querySelector('#clearFilters').addEventListener('click', () => { searchInput.value = ''; activeCategory = 'All'; document.querySelector('[data-category="All"]').click(); });
+    document.querySelector('#checkoutButton').addEventListener('click', () => showToast(cart.length ? 'Checkout is ready for your order' : 'Add a product before checking out'));
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
