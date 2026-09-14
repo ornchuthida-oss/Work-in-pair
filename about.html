@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Morrow Goods - thoughtful products, fair prices, and simple everyday shopping.">
+  <title>Morrow Goods | About Us</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#20211f',
+            paper: '#f7f5f0',
+            coral: '#e7624c',
+            mist: '#e8e4dc',
+            sage: '#aab7a0'
+          },
+          fontFamily: {
+            display: ['Sora', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 18px 50px rgba(32, 33, 31, .10)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f7f5f0; color: #20211f; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .team-card img,
+    .hero-image {
+      transition: transform .5s ease;
+    }
+
+    .team-card:hover img,
+    .hero-image-wrap:hover .hero-image {
+      transform: scale(1.04);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, html {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink px-4 py-2.5 text-center text-xs font-semibold tracking-[.15em] text-paper">
+    Complimentary shipping on orders over $75
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper/95 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
+
+      <a href="index.html" class="font-display text-xl font-bold tracking-[-.06em]" aria-label="Morrow Goods home">
+        morrow<span class="text-coral">.</span>
+      </a>
+
+      <div class="hidden items-center gap-8 text-sm font-semibold md:flex">
+        <a class="transition-colors hover:text-coral" href="../index.html">Home</a>
+        <a class="text-coral" href="about.html" aria-current="page">About</a>
+        <a class="transition-colors hover:text-coral" href="index.html#services">Services</a>
+        <a class="transition-colors hover:text-coral" href="index.html#products">Menu</a>
+        <a class="transition-colors hover:text-coral" href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="cartButton"
+          class="relative rounded-full p-2.5 transition-colors hover:bg-mist"
+          aria-label="Open shopping cart"
+          aria-expanded="false">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M3 4h2l2.5 12h10l3-9H6.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="20" r="1"/>
+            <circle cx="17" cy="20" r="1"/>
+          </svg>
+          <span id="cartCount"
+            class="absolute -right-0.5 -top-0.5 hidden h-4 min-w-4 items-center justify-center rounded-full bg-coral px-1 text-[10px] font-bold text-white">
+            0
+          </span>
+        </button>
+
+        <button id="menuButton"
+          class="rounded-full p-2.5 transition-colors hover:bg-mist md:hidden"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden border-t border-ink/10 px-5 pb-5 md:hidden">
+      <div class="flex flex-col gap-1 pt-3 text-sm font-semibold">
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html">Home</a>
+        <a class="rounded-lg bg-mist px-3 py-3 text-coral" href="about.html">About</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html#services">Services</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html#products">Menu</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-mist" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- About Hero -->
+    <section id="about" class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:py-20 lg:grid-cols-2 lg:px-8 lg:py-24">
+      <div class="reveal max-w-xl">
+        <p class="mb-5 text-xs font-bold uppercase tracking-[.2em] text-coral">Our story</p>
+
+        <h1 class="font-display text-5xl font-semibold leading-[1.05] tracking-[-.07em] sm:text-6xl">
+          About <span class="text-coral">Us.</span>
+        </h1>
+
+        <p class="mt-7 max-w-lg text-base leading-7 text-ink/65">
+          Morrow Goods is an everyday e-commerce store built around simple ideas:
+          thoughtful products, fair prices, and a shopping experience that feels easy.
+        </p>
+
+        <a href="index.html#products"
+          class="mt-9 inline-flex items-center gap-3 rounded-full bg-coral px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5">
+          Shop now <span aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+
+      <div class="hero-image-wrap reveal overflow-hidden rounded-[2rem] bg-sage/50 shadow-soft">
+        <img
+          class="hero-image h-[26rem] w-full object-cover sm:h-[34rem]"
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=85"
+          alt="Modern e-commerce store interior with products"
+          loading="eager">
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="border-y border-ink/10 bg-white/45">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div class="reveal overflow-hidden rounded-[2rem] bg-mist">
+          <img
+            class="h-[24rem] w-full object-cover sm:h-[30rem]"
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+            alt="Customer shopping in a modern store"
+            loading="lazy">
+        </div>
+
+        <div class="reveal max-w-lg">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Our story</p>
+
+          <h2 class="mt-4 font-display text-3xl font-semibold leading-tight tracking-[-.05em] sm:text-4xl">
+            Started small, made for everyday life.
+          </h2>
+
+          <p class="mt-6 leading-7 text-ink/65">
+            Morrow Goods started with a simple goal: make it easier to find useful,
+            beautiful products without spending hours searching through endless choices.
+          </p>
+
+          <p class="mt-4 leading-7 text-ink/65">
+            We carefully select products that balance quality, function, and style.
+            What makes us different is our focus on simple choices, honest value,
+            and a shopping experience designed around our customers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">What guides us</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">
+          Mission & Vision
+        </h2>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <article class="reveal rounded-[2rem] bg-ink p-8 text-paper shadow-soft sm:p-10">
+          <div class="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-coral text-xl">
+            &#10003;
+          </div>
+          <h3 class="font-display text-2xl font-semibold">Our Mission</h3>
+          <p class="mt-4 leading-7 text-paper/65">
+            To provide quality products at fair prices while making online shopping
+            simple, friendly, and convenient for everyone.
+          </p>
+        </article>
+
+        <article class="reveal rounded-[2rem] bg-sage/40 p-8 shadow-soft sm:p-10">
+          <div class="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-paper text-xl">
+            &#9733;
+          </div>
+          <h3 class="font-display text-2xl font-semibold">Our Vision</h3>
+          <p class="mt-4 leading-7 text-ink/65">
+            To become a trusted everyday shopping destination where customers can
+            discover products they love and feel confident about every purchase.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="services" class="border-y border-ink/10 bg-white/45">
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+        <div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Why us</p>
+          <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">
+            Why Choose Us
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="reveal">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-sage/40">
+              <span class="text-lg" aria-hidden="true">&#9733;</span>
+            </div>
+            <h3 class="font-display text-sm font-semibold">Quality Products</h3>
+            <p class="mt-2 text-sm leading-6 text-ink/60">
+              Carefully selected products made to be useful, reliable, and lasting.
+            </p>
+          </article>
+
+          <article class="reveal">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-sage/40">
+              <span class="text-lg" aria-hidden="true">$</span>
+            </div>
+            <h3 class="font-display text-sm font-semibold">Affordable Prices</h3>
+            <p class="mt-2 text-sm leading-6 text-ink/60">
+              Good products at fair prices, so you can shop with confidence.
+            </p>
+          </article>
+
+          <article class="reveal">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-sage/40">
+              <span class="text-lg" aria-hidden="true">&#8594;</span>
+            </div>
+            <h3 class="font-display text-sm font-semibold">Fast Delivery</h3>
+            <p class="mt-2 text-sm leading-6 text-ink/60">
+              We prepare orders carefully and get them on their way quickly.
+            </p>
+          </article>
+
+          <article class="reveal">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-sage/40">
+              <span class="text-lg" aria-hidden="true">&#9825;</span>
+            </div>
+            <h3 class="font-display text-sm font-semibold">Customer Support</h3>
+            <p class="mt-2 text-sm leading-6 text-ink/60">
+              Friendly support is ready to help when you have a question.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+      <div class="reveal rounded-[2rem] bg-coral p-8 text-white shadow-soft sm:p-12">
+        <div class="text-center">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-white/70">By the numbers</p>
+          <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">
+            Growing with our customers
+          </h2>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div class="text-center">
+            <p class="stat-number font-display text-3xl font-bold sm:text-4xl" data-target="10000">0</p>
+            <p class="mt-2 text-sm text-white/75">Happy Customers</p>
+          </div>
+
+          <div class="text-center">
+            <p class="stat-number font-display text-3xl font-bold sm:text-4xl" data-target="500">0</p>
+            <p class="mt-2 text-sm text-white/75">Products</p>
+          </div>
+
+          <div class="text-center">
+            <p class="stat-number font-display text-3xl font-bold sm:text-4xl" data-target="5000">0</p>
+            <p class="mt-2 text-sm text-white/75">Orders</p>
+          </div>
+
+          <div class="text-center">
+            <p class="stat-number font-display text-3xl font-bold sm:text-4xl" data-target="5">0</p>
+            <p class="mt-2 text-sm text-white/75">Years Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="border-y border-ink/10 bg-white/45">
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+        <div class="reveal text-center">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">People behind Morrow</p>
+          <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">
+            Our Team
+          </h2>
+          <p class="mx-auto mt-4 max-w-xl text-sm leading-6 text-ink/60">
+            A small team working together to make everyday shopping better.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="team-card reveal">
+            <div class="overflow-hidden rounded-2xl bg-mist">
+              <img
+                class="aspect-[4/5] w-full object-cover"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=85"
+                alt="Portrait of Daniel Morgan"
+                loading="lazy">
+            </div>
+            <h3 class="mt-4 font-display text-sm font-semibold">Daniel Morgan</h3>
+            <p class="mt-1 text-sm text-ink/55">Founder & CEO</p>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="overflow-hidden rounded-2xl bg-mist">
+              <img
+                class="aspect-[4/5] w-full object-cover"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=85"
+                alt="Portrait of Olivia Carter"
+                loading="lazy">
+            </div>
+            <h3 class="mt-4 font-display text-sm font-semibold">Olivia Carter</h3>
+            <p class="mt-1 text-sm text-ink/55">Creative Director</p>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="overflow-hidden rounded-2xl bg-mist">
+              <img
+                class="aspect-[4/5] w-full object-cover"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85"
+                alt="Portrait of Ethan Brooks"
+                loading="lazy">
+            </div>
+            <h3 class="mt-4 font-display text-sm font-semibold">Ethan Brooks</h3>
+            <p class="mt-1 text-sm text-ink/55">Product Manager</p>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="overflow-hidden rounded-2xl bg-mist">
+              <img
+                class="aspect-[4/5] w-full object-cover"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=85"
+                alt="Portrait of Sophia Lee"
+                loading="lazy">
+            </div>
+            <h3 class="mt-4 font-display text-sm font-semibold">Sophia Lee</h3>
+            <p class="mt-1 text-sm text-ink/55">Customer Support Lead</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+      <div class="reveal rounded-[2rem] bg-ink px-7 py-12 text-paper sm:px-12 sm:py-14">
+        <div class="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-coral">Ready to explore?</p>
+            <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-.05em] sm:text-4xl">
+              Find something you’ll love.
+            </h2>
+            <p class="mt-3 max-w-xl text-sm leading-6 text-paper/55">
+              Discover our carefully selected products and make your everyday a little better.
+            </p>
+          </div>
+
+          <a href="index.html#products"
+            class="inline-flex shrink-0 items-center gap-3 rounded-full bg-coral px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5">
+            Shop Now <span aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-ink px-5 py-12 text-paper lg:px-8">
+    <div class="mx-auto max-w-7xl">
+
+      <div class="grid gap-10 border-b border-white/15 pb-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+        <div>
+          <a href="index.html" class="font-display text-xl font-bold tracking-[-.06em]">
+            morrow<span class="text-coral">.</span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-6 text-paper/55">
+            A considered collection of things for everyday living.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-[.15em] text-paper/45">Explore</h3>
+          <div class="mt-4 flex flex-col gap-3 text-sm text-paper/75">
+            <a class="hover:text-white" href="index.html">Home</a>
+            <a class="hover:text-white" href="about.html">About</a>
+            <a class="hover:text-white" href="index.html#products">Menu</a>
+            <a class="hover:text-white" href="index.html#services">Services</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-[.15em] text-paper/45">Help</h3>
+          <div class="mt-4 flex flex-col gap-3 text-sm text-paper/75">
+            <a class="hover:text-white" href="index.html#contact">Contact</a>
+            <a class="hover:text-white" href="index.html#contact">Shipping</a>
+            <a class="hover:text-white" href="index.html#contact">Returns</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-[.15em] text-paper/45">Follow along</h3>
+          <div class="mt-4 flex gap-4 text-sm text-paper/75">
+            <a class="hover:text-white" href="#" aria-label="Instagram">Instagram</a>
+            <a class="hover:text-white" href="#" aria-label="Pinterest">Pinterest</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col justify-between gap-3 pt-6 text-xs text-paper/45 sm:flex-row">
+        <p>&copy; 2026 Morrow Goods. All rights reserved.</p>
+        <p>Made with care, wherever you are.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast"
+    class="pointer-events-none fixed bottom-5 left-1/2 z-50 -translate-x-1/2 translate-y-4 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white opacity-0 shadow-soft transition-all duration-300"
+    role="status"
+    aria-live="polite">
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuButton = document.querySelector('#menuButton');
+    const mobileMenu = document.querySelector('#mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+
+      mobileMenu.classList.toggle('hidden', isOpen);
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Cart interaction
+    const cartButton = document.querySelector('#cartButton');
+    const cartCount = document.querySelector('#cartCount');
+    const toast = document.querySelector('#toast');
+
+    let itemsInCart = 0;
+    let toastTimer;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2200);
+    }
+
+    cartButton.addEventListener('click', () => {
+      showToast(
+        itemsInCart
+          ? `${itemsInCart} item${itemsInCart === 1 ? '' : 's'} in your cart`
+          : 'Your cart is empty'
+      );
+    });
+
+    // Reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    // Statistics counter
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let statsStarted = false;
+
+    function animateStats() {
+      if (statsStarted) return;
+      statsStarted = true;
+
+      statNumbers.forEach((element) => {
+        const target = Number(element.dataset.target);
+        const duration = 1300;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(target * eased);
+
+          element.textContent =
+            value >= 1000 ? `${Math.floor(value / 1000)}K+` : `${value}+`;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+
+        requestAnimationFrame(update);
+      });
+    }
+
+    const statsSection = document.querySelector('.stat-number');
+
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      if (entries[0].isIntersecting) {
+        animateStats();
+        observer.disconnect();
+      }
+    }, {
+      threshold: 0.4
+    });
+
+    statsObserver.observe(statsSection);
+  </script>
+
+</body>
+</html>
